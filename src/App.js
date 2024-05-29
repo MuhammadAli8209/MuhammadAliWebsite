@@ -9,10 +9,13 @@ import BirdParagraph from "./components/Trynew";
 import SkillsSection from "./components/SkillsSection";
 import Work from "./components/Work";
 import Contacts from "./components/Contacts";
+import { FaPlay  } from "react-icons/fa";
 
 function App() {
   const [rValue, setRValue] = useState(0);
+  const [showPlayIcon, setShowPlayIcon] = useState(true);
   const targetRValueRef = useRef(rValue);
+  const animationFrameIdRef = useRef(null);
 
   useEffect(() => {
     const animateRValue = () => {
@@ -23,9 +26,13 @@ function App() {
         }
         return prevRValue + delta;
       });
-      requestAnimationFrame(animateRValue);
+      animationFrameIdRef.current = requestAnimationFrame(animateRValue);
     };
     animateRValue();
+
+    return () => {
+      cancelAnimationFrame(animationFrameIdRef.current);
+    };
   }, []);
 
   useEffect(() => {
@@ -70,6 +77,24 @@ function App() {
     return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   };
 
+  const handlePlayIconClick = () => {
+    setShowPlayIcon(false);
+    const duration = 10000; // 10 seconds
+    const startTime = performance.now();
+
+    const animateTo7000 = (currentTime) => {
+      const elapsedTime = currentTime - startTime;
+      const progress = Math.min(elapsedTime / duration, 1);
+      const newRValue = Math.round(progress * 7000);
+      targetRValueRef.current = newRValue;
+      if (progress < 1) {
+        requestAnimationFrame(animateTo7000);
+      }
+    };
+
+    requestAnimationFrame(animateTo7000);
+  };
+
   return (
       <div className="App">
         <header className="App-header">
@@ -86,9 +111,13 @@ function App() {
           <SkillsSection rValue={rValue}/> {/* Add SkillsSection component */}
           <Work rValue={rValue}></Work>
           <Contacts rValue={rValue}></Contacts>
+
+          {showPlayIcon && <FaPlay className="playicon" onClick={handlePlayIconClick} />}
+
           {/*<div className="rvalue">*/}
           {/*    <p>rValue: {rValue}</p>*/}
           {/*</div>*/}
+
           <img src="./images/maincougarbackground.jpg" className="backgrdimg" alt="Background"/>
         </header>
       </div>
