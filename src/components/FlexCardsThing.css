@@ -51,3 +51,10 @@
 .first-card {
     margin-left: 0;
 }
+
+.card-description {
+    font-size: 14px;
+    color: #ffffff;
+    margin-left: 10px;
+    margin-top: 20px;
+}

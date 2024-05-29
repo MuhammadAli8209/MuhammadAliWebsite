@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaSnowflake, FaTree, FaSun, FaAirbnb, FaJava, FaReact } from 'react-icons/fa';
 import './FlexCardsThing.css';
 
-const Card = ({ image, title, icon, index, expanded, onClick }) => {
+const Card = ({ image, title, icon, description, index, expanded, onClick }) => {
     return (
         <div
             className={`carder ${expanded ? 'expanded' : ''} ${
@@ -12,14 +12,9 @@ const Card = ({ image, title, icon, index, expanded, onClick }) => {
         >
             <img src={image} alt={title} />
             <div className="card-content">
-                {expanded ? (
-                    <>
-                        <div className="card-icon">{icon}</div>
-                        <h3>{title}</h3>
-                    </>
-                ) : (
-                    <div className="card-icon">{icon}</div>
-                )}
+                <div className="card-icon">{icon}</div>
+                <h3>{title}</h3>
+                {expanded && <p className="card-description">{description}</p>}
             </div>
         </div>
     );
@@ -34,24 +29,28 @@ const FlexCard = ({ rValue }) => {
 
     const cards = [
         {
-            image: 'https://images.unsplash.com/photo-1487383298905-ee8a6b373ff9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            image: './images/gridgame.png',
             title: 'Multiplayer Grid Battle Royale',
             icon: <FaJava />,
+            description: 'Object Oriented programming with real time response in a battle royale game.'
         },
         {
-            image: 'https://images.unsplash.com/photo-1714779573259-216b0cf746be?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            image: './images/finderskeepers.png',
             title: 'FindersKeepers',
             icon: <FaReact />,
+            description: 'Fully functioning marketplace website with image object detection. Firebase/Algolia/Maps implemented.'
         },
         {
-            image: 'https://images.unsplash.com/photo-1716668596098-40ff5f73fb9e?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            image: './images/websitehomepage.png',
             title: 'Personal Website',
             icon: <FaReact />,
+            description: 'My personal website showcasing my portfolio.'
         },
         {
-            image: 'https://images.unsplash.com/photo-1716154220640-3d4985aa841a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+            image: './images/recipething.png',
             title: 'Recipe Search',
             icon: <FaReact />,
+            description: 'A recipe search application that helps you find the perfect meal using APIs.'
         },
     ];
 
@@ -90,6 +89,7 @@ const FlexCard = ({ rValue }) => {
                     image={card.image}
                     title={card.title}
                     icon={card.icon}
+                    description={card.description}
                     index={index}
                     expanded={index === expandedIndex}
                     onClick={handleCardClick}

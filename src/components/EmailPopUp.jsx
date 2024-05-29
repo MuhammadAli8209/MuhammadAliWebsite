@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import { FiX } from 'react-icons/fi';
 import './EmailPopUp.css';
@@ -13,13 +13,18 @@ const EmailPopup = ({ onClose }) => {
         e.preventDefault();
 
         // Send email using email.js
-        emailjs.send('service_8j35hmv', 'template_4wvwrab', {
-            from_name: name,
-            from_email: email,
-            to_email: 'muhammadali82090@gmail.com',
-            title: title,
-            message: message,
-        }, 'cgjzQCv9_RFoi0Dbl')
+        emailjs.send(
+            process.env.REACT_APP_EMAIL_SERVICE_ID,
+            process.env.REACT_APP_EMAIL_TEMPLATE_ID,
+            {
+                from_name: name,
+                from_email: email,
+                to_email: process.env.REACT_APP_EMAIL_ADDRESS,
+                title: title,
+                message: message,
+            },
+            process.env.REACT_APP_EMAIL_USER_ID
+        )
             .then((response) => {
                 console.log('Email sent successfully:', response);
                 onClose();
