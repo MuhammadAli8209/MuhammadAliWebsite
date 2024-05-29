@@ -1,0 +1,103 @@
+.skills-section {
+    position: absolute;
+    width: 100vw;
+    height: 100vh; /* Adjust the height as needed */
+    transition: transform 1s, filter 1s; /* Adjust the duration as needed for smoother transition */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0); /* Fallback background color */
+}
+
+.reveal-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-background {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-50%);
+    object-fit: cover;
+}
+
+.reveal-text {
+    position: absolute;
+    font-family: 'CustomFont', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 3rem; /* Adjust the size as needed */
+    z-index: 300; /* Ensure the text is above the image */
+    transition: opacity 0.5s; /* Smooth transition for text reveal */
+}
+
+.skill-icon-container {
+    position: absolute;
+    transition: transform 0.5s; /* Smooth transition for position change */
+    z-index: 200; /* Ensure the icons are above the background but below the text */
+}
+
+.skill-icon {
+    position: relative;
+    font-size: 3rem; /* Adjust the size as needed */
+    color: #ffffff; /* Adjust the color as needed */
+    cursor: pointer;
+}
+
+.skill-icon:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 125%; /* Position the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 5px; /* Adjust padding as needed */
+    border-radius: 5px;
+    text-align: center;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 300; /* Ensure the tooltip is above the icon */
+    font-size: 0.75rem; /* Adjust the font size */
+    line-height: 1.2; /* Adjust the line height for better readability */
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.tooltip h4 {
+    margin: 0;
+    font-size: 1rem; /* Adjust the heading size */
+}
+
+.tooltip p {
+    margin: 0;
+    font-size: 0.75rem; /* Adjust the paragraph size */
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Arrow pointing down */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+}

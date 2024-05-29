@@ -1,0 +1,141 @@
+@import url(https://fonts.googleapis.com/css?family=Bungee);
+
+.trynewthing {
+    position: absolute;
+    z-index: 200;
+    top: 0;
+    left: 50%; /* Set left position to 50% */
+    transform: translateX(-50%); /* Move the element back by half of its width */
+    height: 100vh;
+    color: white;
+    font-size: 2.3vh;
+    text-align: center;
+    font-family: 'CustomFont', sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    font-weight: 500;
+    width: 40vw;
+    display: flex;
+    flex-direction: column; /* Set the flex direction to column */
+    justify-content: center;
+    align-items: center;
+}
+
+.tohold{
+    position: absolute;
+    top: 30%;
+    right: 0%;
+    width: 100%;
+    z-index: 70;
+}
+
+.icon-container {
+    position: fixed;
+    bottom: -75px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    font-size: 35px; /* Adjust icon size as needed */
+    position: absolute;
+    cursor: pointer;
+    z-index: 54;
+}
+
+.onebob{
+    position: absolute;
+    cursor: pointer;
+
+}
+.twobob{
+    position: absolute;
+    cursor: pointer;
+}
+.threebob{
+    position: absolute;
+    cursor: pointer;
+}
+.fourbob{
+    position: absolute;
+    cursor: pointer;
+}
+
+.overlay {
+    position: fixed;
+
+    width: 0;
+    height: 0;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    visibility: hidden;
+    z-index: 22;
+    transform: translate(-50%, -50%);
+}
+
+.closebutton {
+    position: absolute;
+    top: 17vh;
+    left: 100%;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 2000;
+    visibility: hidden;
+}
+
+.top-left {
+    position: absolute;
+    top: 150px;
+    left: -150px;
+}
+
+.top-right {
+    position: absolute;
+    top: 150px;
+    right: -150px;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 150px;
+    left: 20px;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 150px;
+    right: 20px;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 800px) {
+    .trynewthing{
+        font-size: 1.7vh;
+    }
+
+    .onebob{
+        left: 135px;
+    }
+    .threebob{
+        left: -135px;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    .trynewthing{
+        visibility: visible;
+    }
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}

@@ -1,0 +1,43 @@
+.otherthign {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    background-color: #000000; /* Background color for contrast */
+    z-index: 77;
+    width: 100%;
+}
+
+.image {
+    max-width: 60%; /* Adjust image width as needed */
+    height: auto;
+    flex: 1;
+    border-radius: 10px;
+}
+
+.text {
+    color: white;
+    margin-left: 20px; /* Adjust text margin as needed */
+    position: relative;
+    width: 100%; /* Increase text box width to 70% */
+    font-size: 1rem; /* Adjust text font size as needed */
+}
+
+
+@media (max-width: 768px) {
+    .otherthign {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text {
+        margin-left: 0;
+        margin-top: 20px;
+        width: 100%; /* Adjust text width for smaller screens */
+    }
+
+    .image {
+        margin-top: -80px;
+        max-width: 100%; /* Adjust image width for smaller screens */
+        margin-bottom: 20px; /* Add margin to separate image and text on smaller screens */
+    }
+}

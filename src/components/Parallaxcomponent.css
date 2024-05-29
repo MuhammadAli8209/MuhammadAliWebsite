@@ -1,0 +1,62 @@
+.parallax-container {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    display: block;
+    position: absolute;
+    top: 10vh;
+    left: 80vw;
+    height: 50px !important;
+    width: 50px !important;
+    background: none;
+    color: white;
+}
+.slide.two {
+    display: block;
+    position: absolute;
+    top: 60vh;
+    left: 70vw;
+    height: 50px !important;
+    width: 50px !important;
+    background: none;
+    color: white;
+}
+.slide.three {
+    display: block;
+    position: absolute;
+    top: 30vh;
+    left: 10vw;
+    height: 50px !important;
+    width: 50px !important;
+    background: none;
+    color: white;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 750px) {
+    .slide{
+        height: 50px !important;
+        width: 50px !important;
+    }
+    .slide.two{
+        height: 50px !important;
+        width: 50px !important;
+    }
+    .slide.three{
+        height: 50px !important;
+        width: 50px !important;
+    }
+
+}
+
+@media screen and (min-width: 751px) {
+    .slide{
+
+    }
+}

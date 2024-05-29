@@ -1,0 +1,154 @@
+/* Icons */
+
+a {
+    color: #000000;
+    background: #ffffff;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-family: fontawesome;
+    position: relative;
+    display: inline-block;
+    width: 75px;
+    font-size: 35px;
+    height: 60px;
+    padding-top: 17px;
+    margin: 0 2px;
+    -o-transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    -webkit-font-smoothing: antialiased;
+    z-index: 4;
+}
+
+a:hover {
+    color: #ffffff;
+    background: #000000;
+}
+
+/* pop-up text */
+
+a span {
+    color: #000000;
+    position: absolute;
+    font-family: sans-serif;
+    font-weight: 700; /* Bold */
+    bottom: 30px; /* Adjust this value to move the text higher or lower */
+    left: -25px;
+    right: -25px;
+    padding: 2px 2px;
+    z-index: 0;
+    font-size: 14px;
+    border-radius: 10px;
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    -o-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* pop-up text arrow */
+
+a span:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    position: absolute;
+    bottom: -5px;
+    left: 40px;
+}
+
+/* text pops up when icon is in hover state */
+
+a:hover span {
+    bottom: 90px;
+    visibility: visible;
+    opacity: 1;
+}
+
+/* font awesome icons */
+
+a:nth-of-type(1):before {
+    content: '\f0e0';
+}
+a:nth-of-type(2):before {
+    content: '\f0e1';
+}
+a:nth-of-type(3):before {
+    content: '\f16d';
+}
+a:nth-of-type(4):before {
+    content: '\f09b';
+}
+
+/* Center the boxes on the screen */
+
+.wrapperthing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*adjust the z index to do stuff*/
+    z-index: -10;
+    width: 100vw;
+    position: absolute;
+    height: 100vh; /* This sets the height of the container to the full viewport height */
+}
+
+/* Optional: If you want some space between the boxes, you can add margin to the anchors */
+.wrapperthing a {
+    margin: 0 15px;
+}
+
+.conthetext{
+    position: absolute;
+    font-family: 'CustomFont', sans-serif;
+    font-weight: 700;
+    font-size: 5rem;
+    color: #ffffff;
+    top: 14%;
+    z-index: 500;
+}
+
+.tactthetext{
+    position: absolute;
+    font-family: 'CustomFont', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 5rem;
+    top: 54%;
+    z-index: 500;
+}
+
+.reveal-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+.contact-text {
+    position: absolute;
+    font-family: 'CustomFont', sans-serif;
+    font-weight: 700;
+    font-size: 5rem;
+    color: #ffffff;
+    top: 14%;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.contact-text span {
+    transition: opacity 0.5s;
+}

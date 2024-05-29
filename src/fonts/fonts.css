@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'CustomFont'; /* Name for your font */
+    src: url('../fonts/Azonix.woff') format('woff'); /* Path to your font file */
+    font-weight: normal; /* Font weight, e.g., normal, bold */
+    font-style: normal; /* Font style, e.g., normal, italic */
+}

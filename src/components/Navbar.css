@@ -1,0 +1,337 @@
+
+/*Goal: Make the NavBar Responsive to all devices!!*/
+
+.navbarcontent{
+
+    display: flex;
+    justify-content: space-between;
+    top: 6px;
+    /*left: 100px;*/
+    left: 1vw;
+    position: absolute;
+    z-index: 9999;
+
+}
+
+
+.abtmemenu{
+    font-family: 'CustomFont', sans-serif; /* Use the name defined in @font-face */
+    font-weight: 700; /* Bold */
+    color: #ffffff; /* White text color */
+
+    /*Changes needed for responsiveness*/
+    font-size: 20px;
+    margin-left:15vw;
+    /*position: absolute;*/
+    /*top: 5px; !* Adjust the top position as needed *!*/
+    /*left: 200px; !* Adjust the left position as needed *!*/
+    /*Changes needed for responsiveness*/
+
+    cursor: pointer;
+    opacity: 0;
+
+
+}
+.abtmemenu:hover{
+    border-bottom: 4px solid #ffffff;
+}
+.abtmenuactive{
+    animation: showtextabtme .375s ease-out;
+    opacity: 1;
+}
+/*Keyframing the animation*/
+@keyframes showtextabtme {
+    0% {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.skillsmenu{
+    font-family: 'CustomFont', sans-serif; /* Use the name defined in @font-face */
+    font-weight: 700; /* Bold */
+    color: #ffffff; /* White text color */
+
+    /*Changes needed for responsiveness*/
+    font-size: 20px;
+    margin-left:15vw;
+    /*position: absolute;*/
+    /*top: 5px;*/
+    /*left: 600px;*/
+    /*Changes needed for responsiveness*/
+
+
+    cursor: pointer;
+    opacity: 0;
+}
+.skillsmenu:hover{
+    border-bottom: 4px solid #ffffff; /* Light gold underline on hover */
+}
+.skillsmenuactive{
+    animation: showtestskills .7s ease-out;
+    opacity: 1;
+}
+@keyframes showtestskills {
+    0% {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.work{
+    font-family: 'CustomFont', sans-serif; /* Use the name defined in @font-face */
+    font-weight: 700; /* Bold */
+    color: #ffffff; /* White text color */
+
+    /*Changes needed for responsiveness*/
+    font-size: 20px;
+    margin-left:15vw;
+    /*position: absolute;*/
+    /*top: 5px; !* Adjust the top position as needed *!*/
+    /*left: 950px; !* Adjust the left position as needed *!*/
+    /*Changes needed for responsiveness*/
+
+
+    cursor: pointer;
+    opacity: 0;
+}
+.work:hover{
+    border-bottom: 4px solid #ffffff; /* Light gold underline on hover */
+}
+.workmenuactive{
+    animation: showworkskills 1.125s ease-out;
+    opacity: 1;
+}
+@keyframes showworkskills {
+    0% {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.contact{
+    font-family: 'CustomFont', sans-serif; /* Use the name defined in @font-face */
+    font-weight: 700; /* Bold */
+    color: #ffffff; /* White text color */
+
+    /*Changes needed for responsiveness*/
+    font-size: 20px;
+    margin-left:15vw;
+    /*position: absolute;*/
+    /*top: 5px;*/
+    /*left: 1320px;*/
+    /*Changes needed for responsiveness*/
+
+
+    cursor: pointer;
+    opacity: 0;
+}
+.contact:hover{
+    border-bottom: 4px solid #ffffff; /* Light gold underline on hover */
+}
+.contactmenuactive{
+    animation: showcontact 1.7s ease-out;
+    opacity: 1;
+}
+@keyframes showcontact {
+    0% {
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+/*This is for the hamburger menu, bars, and the moving animation*/
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 5;
+
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: #ffffff;
+    margin: 6px 0;
+    transition: 0.4s;
+    z-index: 5;
+}
+
+.bar-1-active {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    z-index: 5;
+    background-color: #ffffff;
+}
+
+.bar-2-active {
+    transform: translateX(0); /* Start with initial position */
+    opacity: 0;
+    z-index: 5;
+}
+
+.bar-3-active {
+    transform: rotate(45deg) translate(-5px, -6px);
+    z-index: 5;
+    background-color: #ffffff;
+}
+
+@keyframes moveMiddleBar {
+    0% {
+        transform: translateX(0); /* Start from the original position */
+        opacity: 1;
+        width: 50px;
+
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100vw); /* Move to the right of the screen */
+        opacity: 0;
+    }
+}
+
+.close-button {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.4s;
+    z-index: 5; /* Set a higher z-index */
+    background-color: #ffffff;
+}
+
+.close-button-active {
+    opacity: 1;
+    background-color: #ffffff;
+    z-index: 5; /* Set a higher z-index */
+}
+
+
+/* New styles for the sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #050505;
+    transition: left 0.5s; /* Add transition for a sliding effect */
+    z-index: -1;
+}
+
+.sidebar-active {
+    left: 0;
+    z-index: -1;
+}
+
+
+
+/* Media query for responsiveness */
+@media screen and (max-width: 750px) {
+    .sidebar {
+        left: -250px; /* Change to the initial position */
+        transition: left 0.5s; /* Add transition for a sliding effect */
+    }
+
+    .menu-open .sidebar {
+        left: 0;
+        z-index: -1;
+    }
+
+
+    .abtmemenu {
+        visibility: hidden;
+    }
+
+    .skillsmenu {
+        visibility: hidden;
+    }
+
+    .work {
+        visibility: hidden;
+    }
+
+    .contact {
+        visibility: hidden;
+    }
+
+    .bar-2-active {
+        transform: translateX(0); /* Reset the transform for smaller screens */
+    }
+}
+
+@media screen and (min-width: 751px) {
+    .sidebar {
+        left: -250px;
+        visibility: hidden;
+    }
+
+    .menu-open .sidebar {
+        left: 0;
+        visibility: hidden;
+    }
+
+    .bar-2-active {
+        transform: translateX(0);
+        opacity: 0;
+        animation: moveMiddleBar 1.5s ease-out;
+    }
+}
+
+/* New styles for the sidebar items */
+.menu-item {
+    font-family: 'CustomFont', sans-serif;
+    font-weight: 200;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 1;
+    padding: 25px; /* Add padding for spacing */
+    transition: 0.3s; /* Add transition for a smoother effect */
+}
+
+.menumiddle {
+    font-family: 'CustomFont', sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    opacity: 1;
+    padding: 20px;
+    margin-top: 10px;/* Add padding for spacing */
+    transition: 0.3s; /* Add transition for a smoother effect */
+    text-align: center; /* Center the text */
+}
+
+.menu-item:hover {
+    background-color: #333333; /* Add a background color on hover */
+}

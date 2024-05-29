@@ -1,0 +1,60 @@
+
+
+.container {
+    position: absolute;
+    margin: 0;
+    height: 100vh;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.displacement {
+    filter: url(#displacementFilter);
+}
+
+.centerwords {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column; /* Set the flex direction to column */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    font-family: 'CustomFont', sans-serif;
+    font-weight: 700;
+}
+
+.who{
+    opacity: 0;
+}
+
+.am{
+    opacity: 0;
+}
+
+.i{
+    opacity: 0;
+}
+
+.question{
+    opacity: 0;
+}
+
+@media screen and (max-width: 750px) {
+    .centerwords{
+        font-size: 6vw;
+    }
+}
+
+@media screen and (min-width: 751px) {
+    .centerwords{
+        font-size: 4vw;
+    }
+}
