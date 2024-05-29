@@ -95,6 +95,13 @@ function App() {
     requestAnimationFrame(animateTo7000);
   };
 
+  // Add useEffect to hide play icon when rValue is greater than 30
+  useEffect(() => {
+    if (rValue > 100) {
+      setShowPlayIcon(false);
+    }
+  }, [rValue]);
+
   return (
       <div className="App">
         <header className="App-header">
