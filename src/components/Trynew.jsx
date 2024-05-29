@@ -121,7 +121,7 @@ const BirdParagraph = ({scrollthing}) => {
 
 
 
-        console.log("PDATINT PACITIES: ", rValue)
+        //console.log("PDATINT PACITIES: ", rValue)
 
 
         if (rValue > 2500 && rValue < 4000) { //the section ends at 3500, transition from 3500 to 4000
@@ -142,8 +142,8 @@ const BirdParagraph = ({scrollthing}) => {
                 const maxLeftPosition = (window.innerWidth * 0.6) - 150; // Adjust the percentage as needed
                 const maxRightPosition = (window.innerWidth * 0.6) + 150; // Adjust the percentage as needed
 
-                console.log("Max Left Position: "+maxLeftPosition)
-                console.log("newLeftPosition: "+ newPosition + 50)
+                // console.log("Max Left Position: "+maxLeftPosition)
+                // console.log("newLeftPosition: "+ newPosition + 50)
                 // Calculate new left position
                 let newLeftPosition = newPosition + 50;
                 if (newLeftPosition > maxLeftPosition) {
@@ -181,7 +181,7 @@ const BirdParagraph = ({scrollthing}) => {
 
 
 
-                console.log(newPosition);
+                //console.log(newPosition);
             }
 
 

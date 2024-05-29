@@ -13,7 +13,7 @@ class ParallaxSlider extends Component {
 
     componentDidMount() {
         document.addEventListener('mousemove', this.handleMouseMove);
-        console.log("rValue received in ParallaxSlider:", this.props.scrollingthing); // Log rValue here
+        //console.log("rValue received in ParallaxSlider:", this.props.scrollingthing); // Log rValue here
     }
 
     componentWillUnmount() {
