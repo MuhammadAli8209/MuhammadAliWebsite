@@ -20,7 +20,7 @@ This project is licensed under the Apache License 2.0. See the [LICENSE](./LICEN
 
 ## Notice
 
-This project includes code developed by Muhammad Ali (https://MuhammadAliWebsite.github.io). See the [NOTICE](./NOTICE) file for additional details.
+This project includes code developed by Muhammad Ali ([https://MuhammadAliWebsite.github.io](https://muhammadali8209.github.io/MuhammadAliWebsite/)). See the [NOTICE](./NOTICE) file for additional details.
 
 
 ### `npm test`
