@@ -14,6 +14,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+## License
+
+This project is licensed under the Apache License 2.0. See the [LICENSE](./LICENSE) file for more details.
+
+## Notice
+
+This project includes code developed by Muhammad Ali (https://MuhammadAliWebsite.github.io). See the [NOTICE](./NOTICE) file for additional details.
+
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
