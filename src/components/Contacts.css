@@ -81,9 +81,6 @@ a:nth-of-type(2):before {
     content: '\f0e1';
 }
 a:nth-of-type(3):before {
-    content: '\f16d';
-}
-a:nth-of-type(4):before {
     content: '\f09b';
 }
 
