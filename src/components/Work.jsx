@@ -64,7 +64,7 @@ const Work = ({ rValue }) => {
     return (
         <div style={{ position: 'relative' }}>
             <img
-                src="./images/blackbackground.jpg"
+                src= {`${process.env.PUBLIC_URL}/images/blackbackground.jpg`}
                 alt="Black Background"
                 style={{
                     zIndex,

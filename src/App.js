@@ -125,7 +125,9 @@ function App() {
           {/*    <p>rValue: {rValue}</p>*/}
           {/*</div>*/}
 
-          <img src="./images/maincougarbackground.jpg" className="backgrdimg" alt="Background"/>
+          <img src={`${process.env.PUBLIC_URL}/images/maincougarbackground.jpg`} className="backgrdimg"
+               alt="Background"/>
+
         </header>
       </div>
   );

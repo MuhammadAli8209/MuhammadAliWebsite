@@ -78,7 +78,7 @@ const SkillsSection = ({ rValue }) => {
                 </filter>
             </svg>
             <div className="reveal-container" style={{ width: `${revealWidth}%` }}>
-                <img src="./images/skillsbackgroundtwo.jpg" className="skills-background" alt="Skills Background" />
+                <img src={`${process.env.PUBLIC_URL}/images/skillsbackgroundtwo.jpg`} className="skills-background" alt="Skills Background" />
                 <div className="reveal-text" style={{ opacity: textOpacity }}>Skills</div>
                 {icons}
             </div>

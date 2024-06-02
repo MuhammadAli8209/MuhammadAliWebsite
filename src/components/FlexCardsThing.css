@@ -1,3 +1,6 @@
+/* Add this to your FlexCardsThing.css file */
+
+/* Default layout for larger screens */
 .containernewer {
     display: flex;
     justify-content: space-between;
@@ -5,11 +8,44 @@
     margin: 0 auto;
     position: absolute;
     left: 10%;
+    flex-wrap: nowrap; /* Ensure the cards do not wrap on larger screens */
 }
 
+/* Layout adjustments for smaller screens */
+@media (max-width: 768px) {
+    .containernewer {
+        flex-wrap: wrap; /* Allow cards to wrap into rows */
+        justify-content: center; /* Center the cards */
+        top: 10vh; /* Adjust top position as needed */
+    }
+
+    .carder {
+        width: 80% !important; /* Make each card take 80% of the width */
+        margin: 10px 0 !important; /* Add some vertical margin between cards */
+        height: 15vh !important; /* Adjust the height for smaller screens */
+    }
+
+    .expanded {
+        width: 100% !important; /* Make expanded cards take the full width */
+    }
+
+    .card-content {
+        font-size: 0.9em !important; /* Adjust the font size if needed */
+    }
+
+    .card-icon {
+        font-size: 30px !important; /* Adjust the icon size if needed */
+    }
+
+    .card-description {
+        font-size: 12px !important; /* Adjust the description font size if needed */
+    }
+}
+
+/* Default styles for larger screens */
 .carder {
     width: 10%;
-    height: 70vh;
+    height: 70vh; /* Default height for larger screens */
     background-color: white;
     border-radius: 10px;
     margin-left: 20px;

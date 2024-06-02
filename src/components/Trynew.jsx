@@ -159,14 +159,14 @@ const BirdParagraph = ({scrollthing}) => {
                 onething.style.left = `${newLeftPosition}px`
 
                 // twothing.style.top = `${newPosition}px`
-                twothing.style.left = `${newPosition * .4}px`
+                twothing.style.left = `${newLeftPosition * .4}px`
 
                 //special component2
                 threething.style.top = `-${newPosition}px`
                 threething.style.left = `-${newLeftPosition}px`
 
                 // fourthing.style.top = `${newPosition}px`
-                fourthing.style.left = `-${newPosition * .4 }px`
+                fourthing.style.left = `-${newLeftPosition * .4 }px`
 
                 // if(window.innerWidth<800){
                 //     onething.style.left = `${(newPosition + 50) * .4}px`
@@ -208,13 +208,13 @@ const BirdParagraph = ({scrollthing}) => {
             <div className="icon-container">
 
                 <FaHandsHelping   className="icon onebob"
-                              onClick={(event) => handleIconClick(event, './images/me.jpg', 'I taught a class of students in grades 5 and 6 about the basics of Computer Science through Comp Sci Kids! during 2023-2024. I was also the captain of the Conant High School Robotics Team during this time period.')}/>
+                              onClick={(event) => handleIconClick(event, `${process.env.PUBLIC_URL}/images/me.jpg`, 'I taught a class of students in grades 5 and 6 about the basics of Computer Science through Comp Sci Kids! during 2023-2024. I was also the captain of the Conant High School Robotics Team during this time period.')}/>
                 <BiSolidMoviePlay  className="icon twobob"
-                              onClick={(event) => handleIconClick(event, './images/scifimovies.jpg', 'I like to watch sci fi movies like Interstellar or Planet of the Apes. They got me interested in learning more about Physics and how it leans into Computer Science.')}/>
+                              onClick={(event) => handleIconClick(event, `${process.env.PUBLIC_URL}/images/scifimovies.jpg`, 'I like to watch sci fi movies like Interstellar or Planet of the Apes. They got me interested in learning more about Physics and how it leans into Computer Science.')}/>
                 <FaUserGraduate className="icon threebob"
-                              onClick={(event) => handleIconClick(event, './images/uiuclogo.jpg', 'I am currently a first year at the University of Illinois at Urbana Champaign. I am majoring in Computer Science and Physics in the Grainger College of Engineering.')}/>
+                              onClick={(event) => handleIconClick(event, `${process.env.PUBLIC_URL}/images/uiuclogo.jpg`, 'I am currently a first year at the University of Illinois at Urbana Champaign. I am majoring in Computer Science and Physics in the Grainger College of Engineering.')}/>
                 <GoGoal  className="icon fourbob"
-                              onClick={(event) => handleIconClick(event, './images/goalsimage.jpg', 'My near future goals are to graduate with a Masters Degree and to gain great insight as to how I could have an impact in future technological development.')}/>
+                              onClick={(event) => handleIconClick(event, `${process.env.PUBLIC_URL}/images/goalsimage.jpg`, 'My near future goals are to graduate with a Masters Degree and to gain great insight as to how I could have an impact in future technological development.')}/>
 
             </div>
 

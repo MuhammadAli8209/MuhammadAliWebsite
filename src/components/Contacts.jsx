@@ -29,7 +29,7 @@ const Contacts = ({ rValue }) => {
     return (
         <div className="wrapperthing" style={{ zIndex: rValue >= 6500 ? 450 : -10 }}>
             <img
-                src="./images/contactmebackground.jpg"
+                src={`${process.env.PUBLIC_URL}/images/contactmebackground.jpg`}
                 alt="Rock Background"
                 className="reveal-image"
                 style={{

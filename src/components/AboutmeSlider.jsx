@@ -79,7 +79,7 @@ const DisplacementCircle = ({scrollingthing}) => {
                 </defs>
 
                 <image
-                    xlinkHref="./images/abtmebckgroundtwo.png"
+                    xlinkHref= {`${process.env.PUBLIC_URL}/images/abtmebckgroundtwo.png`}
                     width="100%"
                     height="100%"
                     mask="url(#circleMask)"

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaSnowflake, FaTree, FaSun, FaAirbnb, FaJava, FaReact } from 'react-icons/fa';
+import { FaJava, FaReact } from 'react-icons/fa';
 import './FlexCardsThing.css';
 
 const Card = ({ image, title, icon, description, index, expanded, onClick }) => {
@@ -29,25 +29,25 @@ const FlexCard = ({ rValue }) => {
 
     const cards = [
         {
-            image: './images/gridgame.png',
+            image: `${process.env.PUBLIC_URL}/images/gridgame.png`,
             title: 'Multiplayer Grid Battle Royale',
             icon: <FaJava />,
             description: 'Object Oriented programming with real time response in a battle royale game.'
         },
         {
-            image: './images/finderskeepers.png',
+            image: `${process.env.PUBLIC_URL}/images/finderskeepers.png`,
             title: 'FindersKeepers',
             icon: <FaReact />,
             description: 'Fully functioning marketplace website with image object detection. Firebase/Algolia/Maps implemented.'
         },
         {
-            image: './images/websitehomepage.png',
+            image: `${process.env.PUBLIC_URL}/images/websitehomepage.png`,
             title: 'Personal Website',
             icon: <FaReact />,
             description: 'My personal website showcasing my portfolio.'
         },
         {
-            image: './images/recipething.png',
+            image: `${process.env.PUBLIC_URL}/images/recipething.png`,
             title: 'Recipe Search',
             icon: <FaReact />,
             description: 'A recipe search application that helps you find the perfect meal using APIs.'
