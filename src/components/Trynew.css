@@ -24,7 +24,6 @@
 .tohold{
     position: absolute;
     top: 30%;
-    right: 0%;
     width: 100%;
     z-index: 70;
 }

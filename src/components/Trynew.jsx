@@ -159,14 +159,14 @@ const BirdParagraph = ({scrollthing}) => {
                 onething.style.left = `${newLeftPosition}px`
 
                 // twothing.style.top = `${newPosition}px`
-                twothing.style.left = `${newLeftPosition * .4}px`
+                twothing.style.left = `${(newLeftPosition * .4) + 15}px`
 
                 //special component2
                 threething.style.top = `-${newPosition}px`
                 threething.style.left = `-${newLeftPosition}px`
 
                 // fourthing.style.top = `${newPosition}px`
-                fourthing.style.left = `-${newLeftPosition * .4 }px`
+                fourthing.style.left = `-${(newLeftPosition * .4) + 15 }px`
 
                 // if(window.innerWidth<800){
                 //     onething.style.left = `${(newPosition + 50) * .4}px`

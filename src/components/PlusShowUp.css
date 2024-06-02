@@ -32,7 +32,7 @@
     .text {
         margin-left: 0;
         margin-top: 20px;
-        width: 100%; /* Adjust text width for smaller screens */
+        width: 130%; /* Adjust text width for smaller screens */
     }
 
     .image {
