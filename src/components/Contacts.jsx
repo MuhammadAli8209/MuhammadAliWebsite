@@ -51,7 +51,7 @@ const Contacts = ({ rValue }) => {
                 <span>LinkedIn</span>
             </a>
             {/*<a*/}
-            {/*    href="https://www.instagram.com/muh._.ali/"*/}
+            {/*    href="https://www.instagram.com"*/}
             {/*    target="_blank"*/}
             {/*    rel="noopener noreferrer"*/}
             {/*    style={{ opacity: isInstagramVisible ? 1 : 0 }}*/}
