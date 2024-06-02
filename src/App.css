@@ -137,3 +137,13 @@ body {
   cursor: pointer;
   color: white;
 }
+
+.scroller {
+  position: fixed;
+  z-index: 1000;
+  color: white;
+  top: 10%;
+  cursor: pointer;
+  right: 1%; /* Adjust this percentage as needed */
+  font-size: 40px;
+}

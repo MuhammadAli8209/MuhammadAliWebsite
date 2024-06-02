@@ -9,13 +9,16 @@ import BirdParagraph from "./components/Trynew";
 import SkillsSection from "./components/SkillsSection";
 import Work from "./components/Work";
 import Contacts from "./components/Contacts";
-import { FaPlay  } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
+import { CgScrollV } from "react-icons/cg";
 
 function App() {
   const [rValue, setRValue] = useState(0);
   const [showPlayIcon, setShowPlayIcon] = useState(true);
+  const [scrollerTop, setScrollerTop] = useState('10%');
   const targetRValueRef = useRef(rValue);
   const animationFrameIdRef = useRef(null);
+  const dragging = useRef(false);
 
   useEffect(() => {
     const animateRValue = () => {
@@ -72,6 +75,47 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    // Sync scrollerTop with rValue changes
+    const minTop = window.innerHeight * 0.10;
+    const maxTop = window.innerHeight * 0.85;
+    const percentagePosition = rValue / 7000;
+    const newScrollerTop = minTop + percentagePosition * (maxTop - minTop);
+    setScrollerTop(`${newScrollerTop}px`);
+  }, [rValue]);
+
+  const handleDragStart = (event) => {
+    dragging.current = true;
+    event.preventDefault(); // Prevent text selection during drag
+  };
+
+  const handleDragEnd = () => {
+    dragging.current = false;
+  };
+
+  const handleDrag = (event) => {
+    if (dragging.current) {
+      let newY;
+      if (event.type === 'mousemove') {
+        newY = event.clientY;
+      } else if (event.type === 'touchmove') {
+        newY = event.touches[0].clientY;
+      }
+
+      const minTop = window.innerHeight * 0.10;
+      const maxTop = window.innerHeight * 0.85;
+      const boundedTop = Math.min(Math.max(newY, minTop), maxTop);
+
+      setScrollerTop(`${boundedTop}px`);
+
+      // Calculate rValue based on the position of the scroller
+      const percentagePosition = (boundedTop - minTop) / (maxTop - minTop);
+      const newRValue = Math.round(percentagePosition * 7000);
+      targetRValueRef.current = newRValue;
+      setRValue(newRValue);
+    }
+  };
+
   // Function to check if the device is a mobile device
   const isMobileDevice = () => {
     return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -95,39 +139,58 @@ function App() {
     requestAnimationFrame(animateTo7000);
   };
 
-  // Add useEffect to hide play icon when rValue is greater than 30
+  // Add useEffect to hide play icon when rValue is greater than 100
   useEffect(() => {
     if (rValue > 100) {
       setShowPlayIcon(false);
     }
   }, [rValue]);
 
+  useEffect(() => {
+    window.addEventListener('mousemove', handleDrag);
+    window.addEventListener('mouseup', handleDragEnd);
+    window.addEventListener('touchmove', handleDrag);
+    window.addEventListener('touchend', handleDragEnd);
+
+    return () => {
+      window.removeEventListener('mousemove', handleDrag);
+      window.removeEventListener('mouseup', handleDragEnd);
+      window.removeEventListener('touchmove', handleDrag);
+      window.removeEventListener('touchend', handleDragEnd);
+    };
+  }, []);
+
   return (
       <div className="App">
         <header className="App-header">
           <Navbar className="navbafix" rValue={rValue}
-                  setRValue={(newValue) => targetRValueRef.current = newValue}/>
+                  setRValue={(newValue) => targetRValueRef.current = newValue} />
           <div className="center-content">
             <p className="namemiddle">Muhammad</p>
             <p className="namemiddle">Ali</p>
           </div>
-          <ParallaxSlider scrollingthing={rValue}/>
-          <SVGImage scrollingthing={rValue}/>
-          <CoolText scrollthing={rValue} className={"center-content"}/>
-          <BirdParagraph scrollthing={rValue}/>
-          <SkillsSection rValue={rValue}/> {/* Add SkillsSection component */}
+          <ParallaxSlider scrollingthing={rValue} />
+          <SVGImage scrollingthing={rValue} />
+          <CoolText scrollthing={rValue} className={"center-content"} />
+          <BirdParagraph scrollthing={rValue} />
+          <SkillsSection rValue={rValue} /> {/* Add SkillsSection component */}
           <Work rValue={rValue}></Work>
           <Contacts rValue={rValue}></Contacts>
 
           {showPlayIcon && <FaPlay className="playicon" onClick={handlePlayIconClick} />}
+          <CgScrollV
+              className="scroller"
+              onMouseDown={handleDragStart}
+              onTouchStart={handleDragStart}
+              style={{ top: scrollerTop }}
+          />
 
           {/*<div className="rvalue">*/}
           {/*    <p>rValue: {rValue}</p>*/}
           {/*</div>*/}
 
           <img src={`${process.env.PUBLIC_URL}/images/maincougarbackground.jpg`} className="backgrdimg"
-               alt="Background"/>
-
+               alt="Background" />
         </header>
       </div>
   );
