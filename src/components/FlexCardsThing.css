@@ -30,7 +30,7 @@
     }
 
     .card-content {
-        font-size: 0.9em !important; /* Adjust the font size if needed */
+        font-size: 0.6em !important; /* Adjust the font size if needed */
     }
 
     .card-icon {
@@ -38,7 +38,7 @@
     }
 
     .card-description {
-        font-size: 12px !important; /* Adjust the description font size if needed */
+        font-size: 9px !important; /* Adjust the description font size if needed */
     }
 }
 
