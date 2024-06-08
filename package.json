@@ -46,8 +46,7 @@
     "@rooks/use-window-size": "^4.11.2",
     "gh-pages": "^6.1.1",
     "google-auth-library": "^9.4.1",
-    "three": "^0.160.0",
-    "uglify-js": "^3.17.4"
+    "three": "^0.160.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -55,7 +54,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "uglify": "uglifyjs ./build/static/js/*.js -o ./build/static/js/main.min.js",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
