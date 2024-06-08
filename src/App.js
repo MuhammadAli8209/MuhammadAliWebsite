@@ -12,6 +12,8 @@ import Contacts from "./components/Contacts";
 import { FaPlay } from "react-icons/fa";
 import { CgScrollV } from "react-icons/cg";
 
+
+//HELKLOOOO
 function App() {
   const [rValue, setRValue] = useState(0);
   const [showPlayIcon, setShowPlayIcon] = useState(true);
