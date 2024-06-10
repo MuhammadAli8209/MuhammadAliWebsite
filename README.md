@@ -1,3 +1,11 @@
+## License
+
+This project is licensed under the Apache License 2.0. See the [LICENSE](./LICENSE) file for more details.
+
+## Notice
+
+This project includes code developed by Muhammad Ali ([https://MuhammadAliWebsite.github.io](https://muhammadali8209.github.io/MuhammadAliWebsite/)). Before you look at the code, please see the [NOTICE](./NOTICE) file for additional details.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -13,15 +21,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-## License
-
-This project is licensed under the Apache License 2.0. See the [LICENSE](./LICENSE) file for more details.
-
-## Notice
-
-This project includes code developed by Muhammad Ali ([https://MuhammadAliWebsite.github.io](https://muhammadali8209.github.io/MuhammadAliWebsite/)). Before you look at the code, please see the [NOTICE](./NOTICE) file for additional details.
-
 
 ### `npm test`
 
