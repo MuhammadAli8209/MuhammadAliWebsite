@@ -58,14 +58,14 @@ const Contacts = ({ rValue }) => {
             {/*>*/}
             {/*    <span>Instagram</span>*/}
             {/*</a>*/}
-            <a
-                href="https://github.com/MuhammadAli8209"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ opacity: isGitHubVisible ? 1 : 0 }}
-            >
-                <span>GitHub</span>
-            </a>
+            {/*<a*/}
+            {/*    href="https://github.com/MuhammadAli8209"*/}
+            {/*    target="_blank"*/}
+            {/*    rel="noopener noreferrer"*/}
+            {/*    style={{ opacity: isGitHubVisible ? 1 : 0 }}*/}
+            {/*>*/}
+            {/*    <span>GitHub</span>*/}
+            {/*</a>*/}
             <div className="contact-text">
                 {Array.from(contactText).map((letter, index) => (
                     <span
