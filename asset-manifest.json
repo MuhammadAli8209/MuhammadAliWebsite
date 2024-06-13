@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MuhammadAliWebsite/static/css/main.d354af58.css",
-    "main.js": "/MuhammadAliWebsite/static/js/main.e21ad8d2.js",
+    "main.css": "/MuhammadAliWebsite/static/css/main.abfdd4ca.css",
+    "main.js": "/MuhammadAliWebsite/static/js/main.4fb40486.js",
     "static/media/fontawesome-webfont.svg?v=4.7.0": "/MuhammadAliWebsite/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
     "static/media/fontawesome-webfont.eot": "/MuhammadAliWebsite/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/MuhammadAliWebsite/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
@@ -11,7 +11,7 @@
     "index.html": "/MuhammadAliWebsite/index.html"
   },
   "entrypoints": [
-    "static/css/main.d354af58.css",
-    "static/js/main.e21ad8d2.js"
+    "static/css/main.abfdd4ca.css",
+    "static/js/main.4fb40486.js"
   ]
 }
