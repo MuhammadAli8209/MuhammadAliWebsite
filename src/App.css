@@ -138,6 +138,69 @@ body {
   color: white;
 }
 
+/* WarningIcon.css */
+.warning-icon-container {
+  position: absolute;
+  bottom: -0.5%;
+  left: 1%;
+  font-size: 35px;
+  z-index: 1000; /* Ensure it is above other content */
+  cursor: pointer;
+  color: white; /* Adjust the color as needed */
+}
+
+.warning-icon {
+  position: relative;
+}
+
+.tooltiper {
+  position: absolute;
+  bottom: -20%;
+  left: 100%; /* Position to the right of the icon */
+  transform: translateY(-50%);
+  color: #ffffff;
+  padding: 5px;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 400; /* Ensure the tooltip is above the icon */
+  font-size: 0.55rem;
+  line-height: 1.2;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.warning-icon-container:hover .tooltiper,
+.warning-icon-container:active .tooltiper {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tooltiper h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.tooltiper p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.tooltiper::after {
+  content: '';
+  position: absolute;
+  top: 50%; /* Position the arrow in the middle vertically */
+  right: 100%; /* Move the arrow to the right edge of the tooltip */
+  margin-top: -5px; /* Adjust arrow position */
+  border-width: 5px;
+
+}
+
+
+
 .scroller {
   position: fixed;
   z-index: 1000;

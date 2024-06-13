@@ -11,9 +11,8 @@ import Work from "./components/Work";
 import Contacts from "./components/Contacts";
 import { FaPlay } from "react-icons/fa";
 import { CgScrollV } from "react-icons/cg";
+import { IoIosWarning } from 'react-icons/io';
 
-
-//HELKLOOOO
 function App() {
   const [rValue, setRValue] = useState(0);
   const [showPlayIcon, setShowPlayIcon] = useState(true);
@@ -21,6 +20,7 @@ function App() {
   const targetRValueRef = useRef(rValue);
   const animationFrameIdRef = useRef(null);
   const dragging = useRef(false);
+  const [tooltipVisible, setTooltipVisible] = useState(false);
 
   useEffect(() => {
     const animateRValue = () => {
@@ -78,7 +78,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Sync scrollerTop with rValue changes
     const minTop = window.innerHeight * 0.10;
     const maxTop = window.innerHeight * 0.85;
     const percentagePosition = rValue / 7000;
@@ -88,7 +87,7 @@ function App() {
 
   const handleDragStart = (event) => {
     dragging.current = true;
-    event.preventDefault(); // Prevent text selection during drag
+    event.preventDefault();
   };
 
   const handleDragEnd = () => {
@@ -110,7 +109,6 @@ function App() {
 
       setScrollerTop(`${boundedTop}px`);
 
-      // Calculate rValue based on the position of the scroller
       const percentagePosition = (boundedTop - minTop) / (maxTop - minTop);
       const newRValue = Math.round(percentagePosition * 7000);
       targetRValueRef.current = newRValue;
@@ -118,7 +116,6 @@ function App() {
     }
   };
 
-  // Function to check if the device is a mobile device
   const isMobileDevice = () => {
     return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   };
@@ -141,10 +138,12 @@ function App() {
     requestAnimationFrame(animateTo7000);
   };
 
-  // Add useEffect to hide play icon when rValue is greater than 100
   useEffect(() => {
     if (rValue > 100) {
       setShowPlayIcon(false);
+    }
+    if(rValue <100){
+      setShowPlayIcon(true);
     }
   }, [rValue]);
 
@@ -162,8 +161,20 @@ function App() {
     };
   }, []);
 
+  const handleMouseEnter = () => {
+    setTooltipVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setTooltipVisible(false);
+  };
+
+  const handleClick = () => {
+    setTooltipVisible(prevState => !prevState);
+  };
+
   return (
-      <div className="App">
+      <div className="app">
         <header className="App-header">
           <Navbar className="navbafix" rValue={rValue}
                   setRValue={(newValue) => targetRValueRef.current = newValue} />
@@ -187,9 +198,22 @@ function App() {
               style={{ top: scrollerTop }}
           />
 
-          {/*<div className="rvalue">*/}
-          {/*    <p>rValue: {rValue}</p>*/}
-          {/*</div>*/}
+          {rValue < 100 && (
+              <div
+                  className="warning-icon-container"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                  onClick={handleClick}
+              >
+                <IoIosWarning className="warning-icon" />
+                {tooltipVisible && (
+                    <div className="tooltiper">
+                      <h4>Warning</h4>
+                      <p>SVG Animations/Scrolling are not supported by iPhones or iPads.</p>
+                    </div>
+                )}
+              </div>
+          )}
 
           <img src={`${process.env.PUBLIC_URL}/images/maincougarbackground.jpg`} className="backgrdimg"
                alt="Background" />

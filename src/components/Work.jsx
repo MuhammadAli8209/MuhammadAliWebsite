@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import FlexCard from "./FlexCardsTHing";
-import {FaRegAddressCard, FaRegBuilding, FaRegCalendarAlt, FaRegClock} from "react-icons/fa";
+import './Work.css'; // Create a CSS file for CSS transitions
 
 const Work = ({ rValue }) => {
     const [zIndex, setZIndex] = useState(0);
@@ -53,22 +53,21 @@ const Work = ({ rValue }) => {
     }, [rValue, initialPositions.length, word]);
 
     // Calculate opacity based on rValue
-    const opacity = () => {
+    const opacity = useMemo(() => {
         if (rValue >= 6100 && rValue <= 7000) {
-            // Set opacity to a value between 0 and 1 based on the rValue range
-            return 1 - (rValue - 6100) / 400; // Adjust the range and denominator as needed
+            return 1 - (rValue - 6100) / 400;
         }
-        return 1; // Default opacity
-    };
+        return 1;
+    }, [rValue]);
 
     return (
         <div style={{ position: 'relative' }}>
             <img
-                src= {`${process.env.PUBLIC_URL}/images/blackbackground.jpg`}
+                src={`${process.env.PUBLIC_URL}/images/blackbackground.jpg`}
                 alt="Black Background"
                 style={{
                     zIndex,
-                    transition: 'zIndex 0.5s ease-in-out',
+                    transition: 'z-index 0.5s ease-in-out',
                     position: 'absolute',
                     top: 0,
                     left: 0,
@@ -78,7 +77,7 @@ const Work = ({ rValue }) => {
             />
             <div style={{
                 position: 'absolute',
-                top: `${50 - 35 * verticalProgress}vh`, // Adjust top position based on verticalProgress
+                top: `${50 - 35 * verticalProgress}vh`,
                 left: '51.8%',
                 transform: 'translate(-50%, -50%)',
                 fontFamily: 'CustomFont',
@@ -96,14 +95,15 @@ const Work = ({ rValue }) => {
                             top: `calc(50% + ${interpolatedPositions[index]?.y || 0}px)`,
                             left: `calc(50% + ${interpolatedPositions[index]?.x || 0}px)`,
                             transform: `translate(-50%, -50%) scale(${rValue >= 5000 ? 1 : 0})`,
-                            opacity: opacity(), // Apply opacity based on rValue
+                            opacity: opacity,
+                            transition: 'transform 0.5s, opacity 0.5s' // Add CSS transitions
                         }}
                     >
                         {letter}
                     </div>
                 ))}
             </div>
-            <FlexCard rValue={rValue}></FlexCard>
+            <FlexCard rValue={rValue} />
         </div>
     );
 };
