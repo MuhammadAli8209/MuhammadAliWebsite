@@ -2,101 +2,77 @@ import React, { useEffect, useState } from 'react';
 import './Trynew.css';
 import gsap from "gsap";
 import { FaHandsHelping, FaUserGraduate } from "react-icons/fa";
-import { BiSolidMoviePlay } from "react-icons/bi";
 import { GoGoal } from "react-icons/go";
-import ImageWithText from "./PlusShowUp";
-import {FaXmark} from "react-icons/fa6";
+import { MdRocketLaunch } from "react-icons/md";
 
 const BirdParagraph = ({ scrollthing }) => {
     const [rValue, setRValue] = useState(0);
-    const [currentRect, setCurrentRect] = useState(null);
-    const [isOverlayVisible, setIsOverlayVisible] = useState(false);
-    const [imageSrc, setImageSrc] = useState('');
-    const [text, setText] = useState('');
+    const [activeContent, setActiveContent] = useState(null);
+    const [isOriginalText, setIsOriginalText] = useState(true);
+
+    // Content for each icon
+    const iconContents = {
+        one: {
+            text: 'Currently a member of Illinois Space Society, developing navigation systems for rocketry and ground support systems. I also enjoy working on personal projects relating to these systems.',
+            icon: <FaHandsHelping className="icon onebob" />
+        },
+        two: {
+            text: 'I spend a lot of time working on electronic systems and learning new things. I love combining software and hardware while configuring them to my needs.',
+            icon: <MdRocketLaunch className="icon twobob" />
+        },
+        three: {
+            text: 'Courses: Linear Algebra, Data Structures, Relativity, Quantum Physics, and Differential Equations. I\'m always expanding my technical and theoretical toolkit.',
+            icon: <FaUserGraduate className="icon threebob" />
+        },
+        four: {
+            text: 'Future goal: Graduate with a Bachelors Degree and contribute meaningfully to innovations in science and technology—especially in the aerospace sector.',
+            icon: <GoGoal className="icon fourbob" />
+        }
+    };
+
+    const originalText = (
+        <>
+            <p>
+                Hi, I'm Muhammad — a Computer Science and Physics student at UIUC.
+                I build interdisciplinary projects combining software, hardware, and Physics, particularly in aerospace and robotics.
+            </p>
+            <p>(Click the icons to learn more)</p>
+        </>
+    );
 
     useEffect(() => {
         setRValue(scrollthing);
         updateOpacities();
     }, [scrollthing]);
 
-    const handleIconClick = (event, imgSrc, textContent) => {
-        setImageSrc(imgSrc);
-        setText(textContent);
+    const handleIconClick = (contentKey) => {
+    const allIcons = document.querySelectorAll('.icon');
+    
+    if (activeContent === contentKey && !isOriginalText) {
+        // Return to original text and remove white border
+        setIsOriginalText(true);
+        setActiveContent(null);
+        allIcons.forEach(el => el.classList.remove('active-icon'));
+        return;
+    }
 
-        const icon = event.currentTarget;
-        const overlay = document.querySelector('.overlay');
-        const closeButton = document.querySelector('.closebutton');
-        const imageWithText = document.querySelector('.tohold');
+    // Set new content and active icon
+    setIsOriginalText(false);
+    setActiveContent(contentKey);
 
-        const rect = icon.getBoundingClientRect();
-        setCurrentRect(rect);
+    // Animate and highlight active icon
+    allIcons.forEach(el => el.classList.remove('active-icon'));
+    const icon = document.querySelector(`.${contentKey}bob`);
+    icon.classList.add('active-icon');
 
-        overlay.style.top = `${rect.top + 10}px`;
-        overlay.style.left = `${rect.left - (window.innerWidth / 3.4)}px`;
-        overlay.style.width = '0';
-        overlay.style.height = '0';
-        overlay.style.visibility = 'visible';
-        closeButton.style.visibility = 'visible';
-        setIsOverlayVisible(true);
+    gsap.to(icon, {
+        scale: 1.2,
+        duration: 0.3,
+        yoyo: true,
+        repeat: 1
+    });
+};
 
-        gsap.to(overlay, {
-            width: window.innerWidth * 4,
-            height: window.innerWidth * 4,
-            top: `${rect.top}px`,
-            left: `${rect.left}px`,
-            ease: "power4.inOut",
-            duration: 1.0
-        });
-
-        gsap.to(closeButton, {
-            opacity: 1,
-            visibility: 'visible',
-            duration: 2.5
-        });
-
-        gsap.to(imageWithText, {
-            opacity: 1,
-            visibility: 'visible',
-            duration: 1.5
-        });
-    };
-
-    const handleCloseClick = () => {
-        const overlay = document.querySelector('.overlay');
-        const closeButton = document.querySelector('.closebutton');
-        const imageWithText = document.querySelector('.tohold');
-
-        gsap.to(overlay, {
-            width: 0,
-            height: 0,
-            top: `${currentRect.top + 10}px`,
-            left: `${currentRect.left - (window.innerWidth / 3.4)}px`,
-            ease: "power4.inOut",
-            duration: 1.5,
-            onComplete: () => {
-                overlay.style.visibility = 'hidden';
-                closeButton.style.visibility = 'hidden';
-                setIsOverlayVisible(false);
-            }
-        });
-
-        gsap.to(closeButton, {
-            opacity: 0,
-            duration: 1.5,
-            onComplete: () => {
-                closeButton.style.visibility = 'hidden';
-                imageWithText.style.visibility = 'hidden';
-            }
-        });
-
-        gsap.to(imageWithText, {
-            opacity: 0,
-            duration: 1.5,
-            onComplete: () => {
-                imageWithText.style.visibility = 'hidden';
-            }
-        });
-    };
 
     const updateOpacities = () => {
         const who = document.querySelector('.trynewthing');
@@ -117,7 +93,6 @@ const BirdParagraph = ({ scrollthing }) => {
             if (rValue > 2770 && rValue < 3500) {
                 const newPosition = (((rValue - 2700) / 630) * 330);
                 const maxLeftPosition = (window.innerWidth * 0.6) - 150;
-                // const maxRightPosition = (window.innerWidth * 0.6) + 150;
                 let newLeftPosition = newPosition + 50;
                 if (newLeftPosition > maxLeftPosition) {
                     newLeftPosition = maxLeftPosition;
@@ -137,28 +112,28 @@ const BirdParagraph = ({ scrollthing }) => {
 
     return (
         <div className="trynewthing">
-            <p>
-                I am currently a first-year student looking to learn new things
-                and make the most of my opportunities.
-            </p>
-            <p>
-                (Click the Icons)
-            </p>
+            <div className="content-area">
+                <div key={isOriginalText ? 'original' : activeContent} className="fade-text">
+    {isOriginalText ? originalText : (
+        <p className="expanded-content">{iconContents[activeContent]?.text}</p>
+    )}
+</div>
 
-            <div className="icon-container">
-                <FaHandsHelping className="icon onebob" onClick={(event) => handleIconClick(event, `${process.env.PUBLIC_URL}/images/me.jpg`, 'I taught a class of students in grades 5 and 6 about the basics of Computer Science through Comp Sci Kids! during 2023-2024. I was also the captain of the Conant High School Robotics Team during this time period.')} />
-                <BiSolidMoviePlay className="icon twobob" onClick={(event) => handleIconClick(event, `${process.env.PUBLIC_URL}/images/scifimovies.jpg`, 'I like to watch sci fi movies like Interstellar or Planet of the Apes. They got me interested in learning more about Physics and how it leans into Computer Science.')} />
-                <FaUserGraduate className="icon threebob" onClick={(event) => handleIconClick(event, `${process.env.PUBLIC_URL}/images/uiuclogo.jpg`, 'I am currently a first year at the University of Illinois at Urbana Champaign. I am majoring in Computer Science and Physics in the Grainger College of Engineering.')} />
-                <GoGoal className="icon fourbob" onClick={(event) => handleIconClick(event, `${process.env.PUBLIC_URL}/images/goalsimage.jpg`, 'My near future goals are to graduate with a Masters Degree and to gain great insight as to how I could have an impact in future technological development.')} />
             </div>
 
-            <div className="overlay"></div>
-            <FaXmark className="closebutton" onClick={handleCloseClick} />
-            <div className="tohold" style={{ opacity: 0, visibility: 'hidden' }}>
-                <ImageWithText
-                    imageSrc={imageSrc}
-                    text={text}
-                />
+            <div className="icon-container">
+                <div onClick={() => handleIconClick('one')} className="icon-wrapper">
+                    {iconContents.one.icon}
+                </div>
+                <div onClick={() => handleIconClick('two')} className="icon-wrapper">
+                    {iconContents.two.icon}
+                </div>
+                <div onClick={() => handleIconClick('three')} className="icon-wrapper">
+                    {iconContents.three.icon}
+                </div>
+                <div onClick={() => handleIconClick('four')} className="icon-wrapper">
+                    {iconContents.four.icon}
+                </div>
             </div>
         </div>
     );

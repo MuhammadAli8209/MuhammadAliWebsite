@@ -1,5 +1,3 @@
-/* Add this to your FlexCardsThing.css file */
-
 /* Default layout for larger screens */
 .containernewer {
     display: flex;
@@ -8,44 +6,44 @@
     margin: 0 auto;
     position: absolute;
     left: 10%;
-    flex-wrap: nowrap; /* Ensure the cards do not wrap on larger screens */
+    flex-wrap: nowrap;
 }
 
 /* Layout adjustments for smaller screens */
 @media (max-width: 768px) {
     .containernewer {
-        flex-wrap: wrap; /* Allow cards to wrap into rows */
-        justify-content: center; /* Center the cards */
-        top: 10vh; /* Adjust top position as needed */
+        flex-wrap: wrap;
+        justify-content: center;
+        top: 10vh;
     }
 
     .carder {
-        width: 80% !important; /* Make each card take 80% of the width */
-        margin: 10px 0 !important; /* Add some vertical margin between cards */
-        height: 15vh !important; /* Adjust the height for smaller screens */
+        width: 80% !important;
+        margin: 10px 0 !important;
+        height: 15vh !important;
     }
 
     .expanded {
-        width: 100% !important; /* Make expanded cards take the full width */
+        width: 100% !important;
     }
 
     .card-content {
-        font-size: 0.6em !important; /* Adjust the font size if needed */
+        font-size: 0.6em !important;
     }
 
     .card-icon {
-        font-size: 30px !important; /* Adjust the icon size if needed */
+        font-size: 30px !important;
     }
 
     .card-description {
-        font-size: 9px !important; /* Adjust the description font size if needed */
+        font-size: 9px !important;
     }
 }
 
 /* Default styles for larger screens */
 .carder {
     width: 10%;
-    height: 70vh; /* Default height for larger screens */
+    height: 70vh;
     background-color: white;
     border-radius: 10px;
     margin-left: 20px;
@@ -66,18 +64,20 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     display: flex;
     justify-content: flex-start;
-    font-family: 'CustomFont', sans-serif;
     align-items: center;
+    font-family: 'CustomFont', sans-serif;
+    font-weight: 10; /* Medium weight for better readability */
 }
 
 .card-icon {
     font-size: 35px;
     margin-right: 20px;
+    font-weight: 400; /* Normal weight */
 }
 
 .expanded {
@@ -91,6 +91,9 @@
 .card-description {
     font-size: 14px;
     color: #ffffff;
-    margin-left: 10px;
+    margin-left: 30px;
+    margin-right: 10px;
     margin-top: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600; /* Normal weight for supporting text */
 }

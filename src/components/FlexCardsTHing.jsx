@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaJava, FaReact } from 'react-icons/fa';
+import { SiArduino } from "react-icons/si";
 import './FlexCardsThing.css';
 
 const Card = ({ image, title, icon, description, index, expanded, onClick }) => {
@@ -41,10 +42,10 @@ const FlexCard = ({ rValue }) => {
             description: 'Fully functioning marketplace website with image object detection. Firebase/Algolia/Maps implemented.'
         },
         {
-            image: `${process.env.PUBLIC_URL}/images/websitehomepage.png`,
-            title: 'Personal Website',
-            icon: <FaReact />,
-            description: 'My personal website showcasing my portfolio.'
+            image: `${process.env.PUBLIC_URL}/images/DroneProje.png`,
+            title: 'Drone Project',
+            icon: <SiArduino />,
+            description: '(In Development) A custom-built drone using an Arduino Nano as the flight controller, stabilized with IMU data and controlled by code written by me.'
         },
         {
             image: `${process.env.PUBLIC_URL}/images/recipething.png`,

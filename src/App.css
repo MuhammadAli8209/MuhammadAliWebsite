@@ -209,4 +209,5 @@ body {
   cursor: pointer;
   right: 1%; /* Adjust this percentage as needed */
   font-size: 40px;
+  touch-action: none;
 }
