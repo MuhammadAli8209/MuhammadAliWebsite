@@ -8,7 +8,7 @@ const Work = ({ rValue }) => {
     const [initialPositions, setInitialPositions] = useState([]);
     const [interpolatedPositions, setInterpolatedPositions] = useState([]);
     const [verticalProgress, setVerticalProgress] = useState(0);
-    const word = "PROJECTS";
+    const word = "MY WORK";
     const prevRValue = useRef(rValue);
 
     useEffect(() => {

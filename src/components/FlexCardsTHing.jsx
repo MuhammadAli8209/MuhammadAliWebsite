@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaJava, FaReact } from 'react-icons/fa';
+import { FaJava, FaReact, FaNetworkWired } from 'react-icons/fa';
 import { SiArduino } from "react-icons/si";
 import './FlexCardsThing.css';
 
@@ -30,16 +30,10 @@ const FlexCard = ({ rValue }) => {
 
     const cards = [
         {
-            image: `${process.env.PUBLIC_URL}/images/gridgame.png`,
-            title: 'Multiplayer Grid Battle Royale',
-            icon: <FaJava />,
-            description: 'Object Oriented programming with real time response in a battle royale game.'
-        },
-        {
-            image: `${process.env.PUBLIC_URL}/images/finderskeepers.png`,
-            title: 'FindersKeepers',
-            icon: <FaReact />,
-            description: 'Fully functioning marketplace website with image object detection. Firebase/Algolia/Maps implemented.'
+            image: `${process.env.PUBLIC_URL}/images/techlab.jpg`,
+            title: 'Engineering IT (Current Job)',
+            icon: <FaNetworkWired />,
+            description: 'Labs specialist, where I support faculty, staff, and students in EWS computer lab facilities, ensuring lab security, enforcing policies, and maintaining equipment and facilities.'
         },
         {
             image: `${process.env.PUBLIC_URL}/images/DroneProje.png`,
@@ -48,11 +42,19 @@ const FlexCard = ({ rValue }) => {
             description: '(In Development) A custom-built drone using an Arduino Nano as the flight controller, stabilized with IMU data and controlled by code written by me.'
         },
         {
-            image: `${process.env.PUBLIC_URL}/images/recipething.png`,
-            title: 'Recipe Search',
-            icon: <FaReact />,
-            description: 'A recipe search application that helps you find the perfect meal using APIs.'
+            image: `${process.env.PUBLIC_URL}/images/gridgame.png`,
+            title: 'Multiplayer Grid Battle Royale',
+            icon: <FaJava />,
+            description: 'Object Oriented programming with real time response using server client infrastructure in a battle royale game.'
         },
+        {
+            image: `${process.env.PUBLIC_URL}/images/finderskeepers.png`,
+            title: 'FindersKeepers',
+            icon: <FaReact />,
+            description: 'Fully functioning marketplace website with image object detection. Firebase/Algolia/Maps implemented.'
+        },
+        
+        
     ];
 
     // Calculate top position based on rValue

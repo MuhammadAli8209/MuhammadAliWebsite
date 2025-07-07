@@ -115,7 +115,7 @@ const Navbar = ({ rValue, setRValue }) => {
                 <div className={'navbarcontent'}>
                     <div className={`abtmemenu ${abtmeopen ? 'abtmenuactive' : ''}`} onClick={handleAboutClick}>About</div>
                     <div className={`skillsmenu ${skillsOpen ? 'skillsmenuactive' : ''}`} onClick={handleSkillsClick} >Skills</div>
-                    <div className={`work ${workOpen ? 'workmenuactive' : ''}`} onClick={handleProjectsClick} >Projects</div>
+                    <div className={`work ${workOpen ? 'workmenuactive' : ''}`} onClick={handleProjectsClick} >Work</div>
                     <div className={`contact ${contactOpen ? 'contactmenuactive' : ''}`} onClick={handleContactClick}>Contact</div>
                 </div>
 
@@ -124,7 +124,7 @@ const Navbar = ({ rValue, setRValue }) => {
                     <div className="menumiddle">Menu</div>
                     <div className="menu-item" onClick={handleAboutClick}>About</div>
                     <div className="menu-item" onClick={handleSkillsClick}>Skills</div>
-                    <div className="menu-item" onClick={handleProjectsClick}>Projects</div>
+                    <div className="menu-item" onClick={handleProjectsClick}>Work</div>
                     <div className="menu-item" onClick={handleContactClick}>Contact</div>
                 </div>
 
