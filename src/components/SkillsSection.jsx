@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import './SkillsSection.css';
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaPython, FaJava } from 'react-icons/fa';
-import { SiCplusplus } from "react-icons/si";
+import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaPython, FaJava, FaGithub } from 'react-icons/fa';
+import { SiCplusplus, SiVisualstudiocode } from "react-icons/si";
 import { IoLogoFirebase } from 'react-icons/io5';
 
 const SkillsSection = ({ rValue }) => {
@@ -23,7 +23,9 @@ const SkillsSection = ({ rValue }) => {
         { icon: <FaJs />, top: '40%', left: '80%', name: 'JavaScript', description: 'A programming language commonly used in web development.' },
         { icon: <FaPython />, top: '20%', left: '60%', name: 'Python', description: 'A high-level programming language for general-purpose programming.' },
         { icon: <FaJava />, top: '70%', left: '30%', name: 'Java', description: 'A high-level, class-based, object-oriented programming language.' },
-        { icon: <SiCplusplus />, top: '80%', left: '50%', name: 'C++', description: 'A fast, powerful language for system-level and performance-critical programming.' }
+        { icon: <SiCplusplus />, top: '80%', left: '50%', name: 'C++', description: 'A fast, powerful language for system-level and performance-critical programming.' },
+        { icon: <FaGithub />, top: '40%', left: '20%', name: 'GitHub', description: 'A platform for version control and collaboration, allowing developers to manage and share code.' },
+        { icon: <SiVisualstudiocode />, top: '80%', left: '80%', name: 'VS Code', description: 'A popular code editor developed by Microsoft, known for its versatility and rich extension ecosystem.' }
     ], []);
 
     // Generate random movement directions
