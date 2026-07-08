@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaJava, FaReact, FaNetworkWired } from 'react-icons/fa';
-import { SiArduino } from "react-icons/si";
+import { SiArduino, SiSpacex } from "react-icons/si";
 import './FlexCardsThing.css';
 
 const Card = ({ image, title, icon, description, index, expanded, onClick }) => {
@@ -30,16 +30,22 @@ const FlexCard = ({ rValue }) => {
 
     const cards = [
         {
-            image: `${process.env.PUBLIC_URL}/images/techlab.jpg`,
-            title: 'Engineering IT (Current Job)',
-            icon: <FaNetworkWired />,
-            description: 'Labs specialist, where I support faculty, staff, and students in EWS computer lab facilities, ensuring lab security, enforcing policies, and maintaining equipment and facilities.'
+            image: `${process.env.PUBLIC_URL}/images/spacex_sat.jpg`,
+            title: 'SpaceX',
+            icon: <SiSpacex />,
+            description: '(Software Engineering Intern), where I am implementing a validation system to ensure reliable end to end message delivery across multi hop communication paths. Summer 2026'
         },
         {
-            image: `${process.env.PUBLIC_URL}/images/DroneProje.png`,
+            image: `${process.env.PUBLIC_URL}/images/techlab.jpg`,
+            title: 'Engineering IT',
+            icon: <FaNetworkWired />,
+            description: '(Labs specialist), where I support faculty, staff, and students in EWS computer lab facilities, ensuring lab security, enforcing policies, and maintaining equipment and facilities. Campus Job'
+        },
+        {
+            image: `${process.env.PUBLIC_URL}/images/drone_prototype_2.png`,
             title: 'Drone Project',
             icon: <SiArduino />,
-            description: '(In Development) A custom-built drone using an Arduino Nano as the flight controller, stabilized with IMU data and controlled by code written by me.'
+            description: '(In Development) A custom-built drone using a Raspberry Pi as the flight controller, stabilized with IMU data and controlled by code written by me.'
         },
         {
             image: `${process.env.PUBLIC_URL}/images/gridgame.png`,
@@ -47,12 +53,7 @@ const FlexCard = ({ rValue }) => {
             icon: <FaJava />,
             description: 'Object Oriented programming with real time response using server client infrastructure in a battle royale game.'
         },
-        {
-            image: `${process.env.PUBLIC_URL}/images/finderskeepers.png`,
-            title: 'FindersKeepers',
-            icon: <FaReact />,
-            description: 'Fully functioning marketplace website with image object detection. Firebase/Algolia/Maps implemented.'
-        },
+        
         
         
     ];

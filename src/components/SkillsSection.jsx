@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import './SkillsSection.css';
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaPython, FaJava, FaGithub } from 'react-icons/fa';
-import { SiCplusplus, SiVisualstudiocode } from "react-icons/si";
+import { SiArduino, SiCplusplus, SiVisualstudiocode } from "react-icons/si";
 import { IoLogoFirebase } from 'react-icons/io5';
 
 const SkillsSection = ({ rValue }) => {

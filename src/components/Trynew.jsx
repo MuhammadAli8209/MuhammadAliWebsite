@@ -3,7 +3,8 @@ import './Trynew.css';
 import gsap from "gsap";
 import { FaHandsHelping, FaUserGraduate } from "react-icons/fa";
 import { GoGoal } from "react-icons/go";
-import { MdRocketLaunch } from "react-icons/md";
+import { MdDeveloperBoard, MdRocketLaunch } from "react-icons/md";
+import { SiDrone } from 'react-icons/si';
 
 const BirdParagraph = ({ scrollthing }) => {
     const [rValue, setRValue] = useState(0);
@@ -13,19 +14,19 @@ const BirdParagraph = ({ scrollthing }) => {
     // Content for each icon
     const iconContents = {
         one: {
-            text: 'Currently a member of Illinois Space Society, developing navigation systems for rocketry and ground support systems. I also enjoy working on personal projects relating to these systems.',
-            icon: <FaHandsHelping className="icon onebob" />
+            text: 'Avionics Software Lead (25-26) of Illinois Space Society, developing software for rocketry and ground support systems. I also enjoy working on personal projects relating to these systems.',
+            icon: <MdRocketLaunch className="icon onebob" />
         },
         two: {
             text: 'I spend a lot of time working on electronic systems and learning new things. I love combining software and hardware while configuring them to my needs.',
-            icon: <MdRocketLaunch className="icon twobob" />
+            icon: <MdDeveloperBoard className="icon twobob" />
         },
         three: {
-            text: 'Courses: Linear Algebra, Data Structures, Relativity, Quantum Physics, and Differential Equations. I\'m always expanding my technical and theoretical toolkit.',
+            text: 'Courses: Linear Algebra, Data Structures, Computer Architecture, Relativity, Quantum Physics, and Differential Equations.',
             icon: <FaUserGraduate className="icon threebob" />
         },
         four: {
-            text: 'Future goal: Graduate with a Bachelors Degree and contribute meaningfully to innovations in science and technology—especially in the aerospace sector.',
+            text: 'Future goal: Graduate with a Bachelors Degree (Maybe Masters in the future) and contribute meaningfully to innovations in science and technology.',
             icon: <GoGoal className="icon fourbob" />
         }
     };
@@ -34,7 +35,7 @@ const BirdParagraph = ({ scrollthing }) => {
         <>
             <p>
                 Hi, I'm Muhammad — a Computer Science and Physics student at UIUC.
-                I build interdisciplinary projects combining software, hardware, and Physics, particularly in aerospace and robotics.
+                I build interdisciplinary projects combining software, hardware, and Physics, particularly in aerospace and technology.
             </p>
             <p>(Click the icons to learn more)</p>
         </>
